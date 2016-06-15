@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package todo;
+
+// The greeting service definition.
+service DoSomething {
+  // Sends a greeting
+  rpc AddTodo (Todo) returns (Empty) {}
+  rpc ListTodos (Empty) returns (TodoList) {}
+}
+
+message Todo {
+  string name = 1;
+}
+
+message TodoList {
+	repeated Todo todos = 1;
+}
+
+message Empty {
+}
+
+
